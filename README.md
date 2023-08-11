@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/avehtari/BDA_course_Aalto.svg?branch=master)](https://travis-ci.org/avehtari/BDA_course_Aalto)
 
 # Bayesian Data Analysis course material
-
+ 
 This repository has course material for Bayesian Data Analysis course at Aalto (CS-E5710). See [the course web pages for more information](https://avehtari.github.io/BDA_course_Aalto/).
 
 The course material in the repo can be used in other courses. Text and videos licensed under CC-BY-NC 4.0. Code licensed under BSD-3.
