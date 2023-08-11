@@ -2,7 +2,7 @@
 title: "Bayesian Data Analysis course - GSU 2021"
 date: "Page updated: `r format.Date(file.mtime('gsu2021.Rmd'),'%Y-%m-%d')`"
 ---
-
+testing
 Bayesian Data Analysis Global South (GSU) 2021
 
 Lecturer: [Aki Vehtari](https://users.aalto.fi/~ave/index.html)
