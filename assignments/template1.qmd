@@ -113,7 +113,7 @@ distribution_variance = .01
 # Bayes' theorem 1   
 
 
-
+ 
 **Compute the quantities needed to justify your recommendation here. Explain shortly what you do.**
 ```{r}
 # You can do the computation with pen and paper or in R. 
