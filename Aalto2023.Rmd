@@ -11,7 +11,7 @@ params:
   project_presentations: "12.-16.12."
   exam_week_lecture_date: "17.10."
 ---
- 
+ testing
 ```{r, echo=FALSE, results=FALSE}
 Sys.setlocale("LC_TIME", "C")
 
