@@ -10,7 +10,7 @@ date: "Page updated: `r format.Date(file.mtime('Aalto2021.Rmd'),'%Y-%m-%d')`"
  - [Aalto University Code of Academic Integrity and Handling Violations Thereof](https://into.aalto.fi/display/ensaannot/Aalto+University+Code+of+Academic+Integrity+and+Handling+Violations+Thereof)
 
 All the course material is available in a [git repo](https://github.com/avehtari/BDA_course_Aalto) (and these pages are for easier navigation). All the material can be used in other courses. Text and videos licensed under CC-BY-NC 4.0. Code licensed under BSD-3.
-
+ 
 The material will be updated during the course. Exercise instructions and slides will be updated at latest on Monday of the corresponding week. The updated material will appear on the web pages, or you can clone the repo and pull before checking new material. If you don't want to learn git, you can download the latest [zip file](https://github.com/avehtari/BDA_course_Aalto/archive/master.zip).
 
 ## Book: BDA3
