@@ -3,7 +3,7 @@ title: "Bayesian Data Analysis course - Aalto 2023"
 date: "Page updated: `r format.Date(file.mtime('Aalto2023.Rmd'),'%Y-%m-%d')`"
 editor_options: 
   markdown: 
-    wrap: 72
+    wrap: 72 
 params:
   schedule_file: "schedule.csv"
   project_dl: "4.12."
