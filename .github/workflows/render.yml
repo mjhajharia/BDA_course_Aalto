@@ -21,6 +21,8 @@ jobs:
             uses: addnab/docker-run-action@v3
             with:
                 image: meenaljhajharia/bda-docker:latest
+                cache-from: type=gha
+                cache-to: type=gha,mode=max
                 options: -v ${{ github.workspace }}:/work
                 shell: bash
                 run: |
@@ -31,8 +33,8 @@ jobs:
                   git checkout master
                   rmdfiles=$(git diff --name-only HEAD^ | grep '[.]*Rmd$')
                   qmdfiles=$(git diff --name-only HEAD^ | grep '[.]*qmd$')
-                  while read -r filename; do   echo "$filename"; Rscript -e "rmarkdown::render('$filename')";   done < rmdfiles
-                  while read -r filename; do   echo "$filename"; quarto render $filename;   done < qmdfiles
+                  while read -r filename; do   echo "$filename"; Rscript -e "rmarkdown::render('$filename')";   done <<< "$rmdfiles"
+                  while read -r filename; do   echo "$filename"; quarto render $filename;   done <<< "$qmdfiles"
 
           - name: GitHub Pages action
             uses: peaceiris/actions-gh-pages@v3.6.1
