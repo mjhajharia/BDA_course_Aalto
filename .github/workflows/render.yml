@@ -5,7 +5,7 @@ on:
     # paths: ['**.Rmd']
 
 
-name: render-rmarkdown
+name: render-rmdqmdfiles
          
 jobs:
   render-rmarkdown:
@@ -26,18 +26,17 @@ jobs:
                 run: |
                   cd /work
                   git config --global --add safe.directory /work
-                  git config --global user.name "avehtari"
-                  git config --global user.email "aki.vehtari@aalto.fi"
+                  git config --global user.name "mjhajharia"
+                  git config --global user.email "meenal@mjhajharia.com"
                   git checkout master
-                  git diff --name-only HEAD^ | grep '[.]*Rmd$' > last_modified_rmd_files.txt
-		  git diff --name-only HEAD^ | grep '[.]*qmd$' > last_modified_qmd_files.txt
-                  while read -r filename; do   echo "$filename"; Rscript -e "rmarkdown::render('$filename')";   done < last_modified_rmd_files.txt
-                  while read -r filename; do   echo "$filename"; quarto render $filename;   done < last_modified_qmd_files.txt
+                  rmdfiles=$(git diff --name-only HEAD^ | grep '[.]*Rmd$')
+                  qmdfiles=$(git diff --name-only HEAD^ | grep '[.]*qmd$')
+                  while read -r filename; do   echo "$filename"; Rscript -e "rmarkdown::render('$filename')";   done < rmdfiles
+                  while read -r filename; do   echo "$filename"; quarto render $filename;   done < qmdfiles
 
           - name: GitHub Pages action
             uses: peaceiris/actions-gh-pages@v3.6.1
             with:
-              github_token: ${{ secrets.GH_ACTION_ }}
-              publish_branch: master
+              github_token: ${{ secrets.GH_ACTION}}
+              publish_branch: gh-pages
               publish_dir: docs
-
