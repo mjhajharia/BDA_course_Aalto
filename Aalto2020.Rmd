@@ -1,7 +1,7 @@
 ---
 title: "Bayesian Data Analysis course - Aalto 2020"
 date: "Page updated: `r format.Date(file.mtime('Aalto2020.Rmd'),'%Y-%m-%d')`"
----
+--- 
 
 **Aalto 2020** course will be completely online.
  
