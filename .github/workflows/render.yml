@@ -17,13 +17,6 @@ jobs:
               fetch-depth: 0
             env:
               GITHUB_PAT: ${{ secrets.GH_ACTION }}
-
-          - name: Build and Cache Docker image
-            id: build-image
-            run: |
-              docker pull meenaljhajharia/bda-docker:latest || true
-              docker build -t meenaljhajharia/bda-docker:latest --cache-from=meenaljhajharia/bda-docker:latest .
-
           - name: Run the build process with Docker
             uses: addnab/docker-run-action@v3
             with:
@@ -37,7 +30,7 @@ jobs:
                   git config --global user.email "meenal@mjhajharia.com"
                   git checkout master
                   rmdfiles=$(git diff --name-only HEAD^ | grep '[.]*Rmd$')
-                  qmdfiles=$(git diff --name-only HEAD^ | grep '[.]*qmd$')
+                  # qmdfiles=$(git diff --name-only HEAD^ | grep '[.]*qmd$')
                   while read -r filename; do   echo "$filename"; Rscript -e "rmarkdown::render('$filename')";   done <<< "$rmdfiles"
                   # while read -r filename; do   echo "$filename"; quarto render $filename;   done <<< "$qmdfiles"
 
