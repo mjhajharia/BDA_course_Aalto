@@ -14,7 +14,7 @@ params:
 
 ```{r, echo=FALSE, results=FALSE}
 Sys.setlocale("LC_TIME", "C")
- 
+  
 schedule <- read.csv2(params$schedule_file, sep = "\t", header = FALSE, row.names = 1, col.names = paste("Week", 0:13, sep = ""))
 
 # parse a date from the schedule. Google sheets format DD/MM/YYYY
